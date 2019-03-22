@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_margin">16dp</dimen>
+    <dimen name="common_line">1dip</dimen>
+    <dimen name="common_text_size">16sp</dimen>
+    <dimen name="common_bar_height">52dp</dimen>
+    <dimen name="common_title">24sp</dimen>
+    <dimen name="margin_20dp">20dp</dimen>
+
+    <dimen name="margin_4dp">4dp</dimen>
+    <dimen name="margin_6dp">6dp</dimen>
+</resources>
