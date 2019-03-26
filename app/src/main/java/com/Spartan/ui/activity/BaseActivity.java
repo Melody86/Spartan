@@ -18,6 +18,7 @@ import com.Spartan.ui.common.CommonActionBar;
 public abstract class BaseActivity extends AppCompatActivity {
     private CommonActionBar commonActionBar;
     private ConstraintLayout root_view;
+    private ConstraintLayout content;
     private static final String TAG = "BaseActivity";
 
     @Override
@@ -25,12 +26,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.base_activity);
-        ActionBar actionBar = getSupportActionBar();
-        getSupportActionBar().hide();
 
-        commonActionBar = (CommonActionBar) findViewById(R.id.common_action_bar);
+        commonActionBar = (CommonActionBar) findViewById(R.id.base_action_bar);
         root_view = (ConstraintLayout) findViewById(R.id.root_view);
-
+        content = (ConstraintLayout) findViewById(R.id.content);
         setContentViewByRes(getLayoutById());
         initView();
         initData();
@@ -40,9 +39,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     private void setContentViewByRes(int res){
-        if(root_view != null){
-            root_view.removeAllViews();
-            LayoutInflater.from(this).inflate(res, root_view);
+        if(content != null){
+            content.removeAllViews();
+            LayoutInflater.from(this).inflate(res, content);
         }
     }
 

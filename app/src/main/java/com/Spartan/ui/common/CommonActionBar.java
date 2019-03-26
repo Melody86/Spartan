@@ -2,8 +2,12 @@ package com.Spartan.ui.common;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.ActionBar;
+import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -20,7 +24,7 @@ public class CommonActionBar extends ConstraintLayout{
     private TextView title_text, left_text, right_text;
     private LinearLayout title_ll, left_ll, right_ll;
     private ImageView left_iv, right_iv;
-    private String TAG;
+    private String TAG = this.getClass().getName();;
     private View action_bar;
 
 
@@ -30,7 +34,6 @@ public class CommonActionBar extends ConstraintLayout{
 
         action_bar = findViewById(R.id.action_bar);
 
-        TAG = this.getClass().getName();
         title_text = (TextView) findViewById(R.id.title_text);
         left_text = (TextView) findViewById(R.id.left_text);
         right_text = (TextView) findViewById(R.id.right_text);
@@ -59,7 +62,36 @@ public class CommonActionBar extends ConstraintLayout{
 
     }
 
+    public CommonActionBar(Context context, AttributeSet attrs){
+        super(context, attrs);
+        initView();
+        TypedArray mTypeArray = context.obtainStyledAttributes(attrs, R.styleable.CommonActionBar);
+        CharSequence c_title_text = mTypeArray.getText(R.styleable.CommonActionBar_title_text);
+        CharSequence c_left_text = mTypeArray.getText(R.styleable.CommonActionBar_left_text);
+        CharSequence c_right_text = mTypeArray.getText(R.styleable.CommonActionBar_right_text);
 
+        Drawable d_left_icon = mTypeArray.getDrawable(R.styleable.CommonActionBar_left_icon);
+        Drawable d_right_icon = mTypeArray.getDrawable(R.styleable.CommonActionBar_right_icon);
+
+        if(c_title_text != null){
+            title_text.setText(c_title_text);
+        }
+        if(c_left_text != null){
+            left_text.setText(c_left_text);
+        }
+        if(c_right_text != null){
+            right_text.setText(c_right_text);
+        }
+
+        if(d_left_icon != null){
+            left_iv.setImageDrawable(d_left_icon);
+        }
+        if(d_right_icon != null){
+            right_iv.setImageDrawable(d_right_icon);
+        }
+
+        mTypeArray.recycle();
+    }
     public void setLeftListener(OnClickListener cl){
         left_ll.setOnClickListener(cl);
     }

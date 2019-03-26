@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CommonActionBar">
+        <attr name="title_text" format="string"></attr>
+        <attr name="left_text" format="string"></attr>
+        <attr name="right_text" format="string"></attr>
+        <attr name="left_icon" format="reference"></attr>
+        <attr name="right_icon" format="reference"></attr>
+    </declare-styleable>
+
+</resources>

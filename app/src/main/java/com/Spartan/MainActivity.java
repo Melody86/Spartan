@@ -17,9 +17,9 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void setActionBar() {
-//        super.setActionBar();
-//        CommonActionBar commonActionBar = getCommonActionBar();
-//        commonActionBar.setTitle("首页");
+        super.setActionBar();
+        CommonActionBar commonActionBar = getCommonActionBar();
+        commonActionBar.setTitle("首页");
     }
 
     @Override
