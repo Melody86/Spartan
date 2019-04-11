@@ -1,11 +1,14 @@
 package com.Spartan.ui.activity;
 
+import android.content.MutableContextWrapper;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.webkit.WebView;
 
 import com.Spartan.R;
 import com.Spartan.ui.common.CommonActionBar;
@@ -71,6 +74,5 @@ public abstract class BaseActivity extends AppCompatActivity {
     public ConstraintLayout getRootView(){
         return root_view;
     }
-
 
 }

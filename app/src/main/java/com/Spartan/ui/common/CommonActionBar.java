@@ -121,6 +121,7 @@ public class CommonActionBar extends ConstraintLayout{
     public void setRightView(View v){ setView(R.id.right_icon, v); }
     public void setRightViewVisiable(){ right_iv.setVisibility(VISIBLE); }
 
+
     private void setView(int rootId, int layoutId){
         LinearLayout ll = findViewById(rootId);
         ll.removeAllViews();
